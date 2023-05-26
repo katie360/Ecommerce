@@ -10,3 +10,8 @@ nav {
     color: rgb(138, 10, 95);
     font-size: 33px;
 }
+
+.dropdown-menu {
+    width: 400px!important;
+    padding: 22px;
+}
