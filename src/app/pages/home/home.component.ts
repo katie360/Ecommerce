@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public cartAddedSubject = new Subject<boolean>();
+  
   productList :any [] =[];
 
   cartObj:any = {
@@ -40,6 +39,7 @@ ngOnInit():void{
       this.productService.addToCart(this.cartObj).subscribe((result:any)=>{
        if (result.result){
          alert('Product added successfully');
+         this.productService.cartAddedSubject.next(true)
        }
      })
     }

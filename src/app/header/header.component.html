@@ -57,18 +57,18 @@
                                     Remove All
                                 </div>
                             </div>
-                            <div class="row pt-1">
+                            <div class="row pt-1" *ngFor="let cart of cartProducts">
                                 <div class="col-4">
-                                    <img class="img-fluid" style="height: 70px;border-radius: 50%;" src="https://i.gadgets360cdn.com/products/large/redmi-note-12-5g-pro-plus-db-gadgets360-800x600-1673019783.jpg" class="card-img-top ">
+                                    <img class="img-fluid" style="height: 70px;border-radius: 50%;" [src]="cart.productImageUrl" class="card-img-top ">
                                 </div>
                                 <div class="col-3 ">
-                                    0ppo
+                                    {{cart.productName}}
                                 </div>
                                 <div class="col-2 ">
-                                    356
+                                    {{cart.quantity}}
                                 </div>
                                 <div class="col-2 text-end ">
-                                    234
+                                    {{cart.productPrice}}
                                 </div>
                             </div>
 
